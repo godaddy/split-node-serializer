@@ -1,0 +1,32 @@
+{
+  "name": "@godaddy/split-node-serializer",
+  "version": "0.0.1",
+  "description": "",
+  "main": "lib/index.js",
+  "scripts": {
+    "coverage": "nyc mocha 'lib/*.test.js'",
+    "lint": "standard --fix --env mocha",
+    "release": "standard-version --tag-prefix=''",
+    "test": "mocha --exit --recursive lib"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/godaddy/split-node-serializer.git"
+  },
+  "keywords": [],
+  "author": "GoDaddy Operating Company, LLC",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^6.2.2",
+    "nyc": "^14.1.1",
+    "standard": "^14.3.1",
+    "standard-version": "^7.0.1"
+  },
+  "nyc": {
+    "check-coverage": true,
+    "lines": 100,
+    "functions": 100
+  }
+}
