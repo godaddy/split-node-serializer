@@ -16,10 +16,14 @@
   "keywords": [],
   "author": "GoDaddy Operating Company, LLC",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "request": "^2.88.0",
+    "request-promise": "^4.2.5"
+  },
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^6.2.2",
+    "nock": "^11.7.0",
     "nyc": "^14.1.1",
     "standard": "^14.3.1",
     "standard-version": "^7.0.1"
