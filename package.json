@@ -4,7 +4,7 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "coverage": "nyc mocha 'lib/*.test.js'",
+    "coverage": "nyc mocha --exit 'lib/*.test.js'",
     "lint": "standard --fix --env mocha",
     "release": "standard-version --tag-prefix=''",
     "test": "mocha --exit --recursive lib"
@@ -30,7 +30,7 @@
   },
   "nyc": {
     "check-coverage": true,
-    "lines": 97,
+    "lines": 100,
     "functions": 100
   }
 }
