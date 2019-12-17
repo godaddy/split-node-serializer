@@ -15,7 +15,7 @@ $ npm i @godaddy/split-node-serializer --save
 
 Use this package in your server-side Node.js environment. The serializer exposes:
 1. a `Poller` that periodically requests raw experiment configuration data from Split.io. Requests happen in the background and the poller caches the latest data in local memory.
-1. a `DataSerializer` that reads from the poller's cache, serializes the data, and returns it as a script to be injected into a client's HTML.
+1. a `DataSerializer` that reads from the poller's cache, serializes the data, and returns it in a script to be injected into a client's HTML.
 
 ### Constructor
 
@@ -24,7 +24,7 @@ Create an instance of `Poller` and `DataSerializer`:
 ```js
 const { Poller, DataSerializer } = require('@godaddy/split-node-serializer')
 
-const poller = new DataSerializer({
+const poller = new Poller({
   splitioApiKey: 'YOUR_API_KEY',
   pollingRateSeconds: 600,
   serializeSegments: false
@@ -33,13 +33,13 @@ const poller = new DataSerializer({
 const dataSerializer = new DataSerializer({ poller })
 ```
 
-The following option properties are available:
+The following option properties are available to the `Poller`:
 
 | Property                      | Description |
 |-------------------------------|-------------|
 | splitioApiKey | The Split.io SDK key for the environment your app is running in. Can be requested in `#experimentation` on slack (required). |
 | pollingRateSeconds | The interval at which to poll Split.io. Defaults to 300 (5 minutes). |
-| serializeSegments | Whether or not to fetch segment configuration data. Defaults to false. *note:* support for getting segments is not available yet |
+| serializeSegments | Whether or not to fetch segment configuration data. Defaults to false. **note:** *support for serializing segments is not available yet* |
 
 #### Serializing segments
 
@@ -76,14 +76,14 @@ const serializedDataScript = dataSerializer.generateSerializedDataScript()
 
 console.log(serializedDataScript)
 
-<!-- <script>
-  window.__splitCachePreload = {
-    splitsData: {"split-1-name":{"name":"split-1-name","status":"bar"},"split-2-name":{"name":"split-2-name","status":"baz"}},
-    since: 1,
-    segmentsData: {"test-segment":{"name":"test-segment","added":["foo","bar"]}},
-    usingSegmentsCount: 2
-  };
-</script> -->
+//<script>
+//  window.__splitCachePreload = {
+//    splitsData: {"split-1-name":{"name":"split-1-name","status":"bar"},"split-2-name":{"name":"split-2-name","status":"baz"}},
+//    since: 1,
+//    segmentsData: {"test-segment":{"name":"test-segment","added":["foo","bar"]}},
+//    usingSegmentsCount: 2
+//  };
+//</script>
 ```
 
 ## Testing
