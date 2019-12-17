@@ -13,20 +13,24 @@ $ npm i @godaddy/split-node-serializer --save
 
 ## Usage
 
-Use this package in your server-side Node.js environment. The serializer exposes a poller that periodically requests raw experiment configuration data from Split.io. Requests happen in the background and the poller caches the latest data in local memory.
+Use this package in your server-side Node.js environment. The serializer exposes:
+1. a `Poller` that periodically requests raw experiment configuration data from Split.io. Requests happen in the background and the poller caches the latest data in local memory.
+1. a `DataSerializer` that reads from the poller's cache, serializes the data, and returns it as a script to be injected into a client's HTML.
 
 ### Constructor
 
-Create an instance `DataSerializer`:
+Create an instance of `Poller` and `DataSerializer`:
 
 ```js
-const DataSerializer = require('@godaddy/split-node-serializer')
+const { Poller, DataSerializer } = require('@godaddy/split-node-serializer')
 
-const dataSerializer = new DataSerializer({
+const poller = new DataSerializer({
   splitioApiKey: 'YOUR_API_KEY',
   pollingRateSeconds: 600,
   serializeSegments: false
 })
+
+const dataSerializer = new DataSerializer({ poller })
 ```
 
 The following option properties are available:
@@ -41,33 +45,45 @@ The following option properties are available:
 
 Segments are pre-defined groups of customers that features can be targeted to. More info [here](https://help.split.io/hc/en-us/articles/360020407512-Create-a-segment).
 
-**Note:** Requesting serialized segments will increase the size of your response.
+**Note:** Requesting serialized segments will increase the size of your response. Segments can be very large if they include all company employees, for example.
 
 ### Methods
 
 #### poll
 
-The `DataSerializer` class has a `Poller`.
-
-Start polling for raw configuration data:
+Start polling for raw configuration data every `pollingRateSeconds`:
 
 ```js
-dataSerializer.poller.poll()
+poller.poll()
 ```
 
 To stop the poller:
+
 ```js
-dataSerializer.poller.stop()
+poller.stop()
 ```
 
 The poller emits an `error` event on errors from the Split.io API.
 
 #### getSerializedData
 
-`getSerializedData` will read the latest data from the cache and return a script that adds serialized data to the `window.__splitCachePreload` object.
+`getSerializedData` will read the latest data from the cache and return a script
+that adds serialized data to the `window.__splitCachePreload` object. The
+serialized data will be used to determine cohort allocations.
 
 ```js
-dataSerializer.generateSerializedDataScript()
+const serializedDataScript = dataSerializer.generateSerializedDataScript()
+
+console.log(serializedDataScript)
+
+<!-- <script>
+  window.__splitCachePreload = {
+    splitsData: {"split-1-name":{"name":"split-1-name","status":"bar"},"split-2-name":{"name":"split-2-name","status":"baz"}},
+    since: 1,
+    segmentsData: {"test-segment":{"name":"test-segment","added":["foo","bar"]}},
+    usingSegmentsCount: 2
+  };
+</script> -->
 ```
 
 ## Testing
