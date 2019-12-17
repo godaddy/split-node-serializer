@@ -30,7 +30,7 @@
   },
   "nyc": {
     "check-coverage": true,
-    "lines": 98,
+    "lines": 100,
     "functions": 100
   }
 }
