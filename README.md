@@ -49,13 +49,13 @@ Segments are pre-defined groups of customers that features can be targeted to. M
 
 ### Methods
 
-#### initialize
+#### start
 
 Make an initial request for changes and start polling for raw configuration data
 every `pollingRateSeconds`:
 
 ```js
-poller.initialize()
+poller.start()
 ```
 
 To stop the poller:
