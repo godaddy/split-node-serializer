@@ -37,9 +37,9 @@ The following option properties are available to the `Poller`:
 
 | Property                      | Description |
 |-------------------------------|-------------|
-| splitioApiKey | The Split.io SDK key for the environment your app is running in. Can be requested in `#experimentation` on slack (required). |
+| splitioApiKey | The Split.io SDK key for the environment your app is running in. (required) |
 | pollingRateSeconds | The interval at which to poll Split.io. Defaults to 300 (5 minutes). |
-| serializeSegments | Whether or not to fetch segment configuration data. Defaults to false. **note:** *support for serializing segments is not available yet* |
+| serializeSegments | Whether or not to fetch segment configuration data. Defaults to false. |
 
 #### Serializing segments
 
@@ -58,6 +58,7 @@ every `pollingRateSeconds`:
 poller.start()
 ```
 
+#### stop
 To stop the poller:
 
 ```js
@@ -66,9 +67,9 @@ poller.stop()
 
 The poller emits an `error` event on errors from the Split.io API.
 
-#### getSerializedData
+#### generateSerializedDataScript
 
-`getSerializedData` will read the latest data from the cache and return a script
+`generateSerializedDataScript` will read the latest data from the cache and return a script
 that adds serialized data to the `window.__splitCachePreload` object. The
 serialized data will be used to determine cohort allocations.
 
