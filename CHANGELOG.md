@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.1.1](https://github.com/godaddy/split-node-serializer/compare/1.1.0...1.1.1) (2020-01-09)
+
+
+### Bug Fixes
+
+* **data-serializer:** bug where we didn't stringify splits and segments ([#31](https://github.com/godaddy/split-node-serializer/issues/31)) ([75f07c2](https://github.com/godaddy/split-node-serializer/commit/75f07c24956ba2165509db367604d316002f6437))
+
 ## [1.1.0](https://github.com/godaddy/split-node-serializer/compare/1.0.0...1.1.0) (2020-01-02)
 
 
