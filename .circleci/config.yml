@@ -35,7 +35,4 @@ jobs:
       - run: npm run lint
 
       # run coverage
-      - run:
-          name: Upload Code Coverage
-          command: npm run coverage
-          when: on_success
+      - run: npm run coverage
