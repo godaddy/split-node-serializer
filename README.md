@@ -79,7 +79,7 @@ serialized data will be used to determine cohort allocations.
 
 | Property                      | Description |
 |-------------------------------|-------------|
-| splits | Optional array of strings. If supplied, data from splits other than those listed will be filtered out |
+| splits | Array of strings that, if included, filters the splitsData (Optional) |
 
 ```js
 const serializedDataScript = dataSerializer.generateSerializedDataScript()
