@@ -75,6 +75,12 @@ The poller emits an `error` event on errors from the Split.io API.
 that adds serialized data to the `window.__splitCachePreload` object. The
 serialized data will be used to determine cohort allocations.
 
+`generateSerializedDataScript` accepts the following arguments:
+
+| Property                      | Description |
+|-------------------------------|-------------|
+| splits | Array of strings that, if included, filters the splitsData (Optional) |
+
 ```js
 const serializedDataScript = dataSerializer.generateSerializedDataScript()
 
