@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.2.0](https://github.com/godaddy/split-node-serializer/compare/1.1.1...1.2.0) (2020-02-05)
+
+
+### Features
+
+* **data-serializer:** Add optional 'splits' param to generateSerializedDataScript for filtering ([#39](https://github.com/godaddy/split-node-serializer/issues/39)) ([40f9510](https://github.com/godaddy/split-node-serializer/commit/40f9510b3b10afc1d69b92f81a570968cfa79b70))
+
 ### [1.1.1](https://github.com/godaddy/split-node-serializer/compare/1.1.0...1.1.1) (2020-01-09)
 
 
