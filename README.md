@@ -96,6 +96,8 @@ console.log(serializedDataScript)
 //</script>
 ```
 
+**Note:** Though this is an async method, there will only be a Split.io API call if you are calling this method with a unique `splits` parameter.
+
 ## Testing
 
 Run the linter:
