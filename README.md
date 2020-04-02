@@ -96,7 +96,7 @@ console.log(serializedDataScript)
 //</script>
 ```
 
-**Note:** Though this is an async method, there will only be a Split.io API call if you are passing in a unique `splits` parameter that this instance's method has not received before.
+**Note:** Though this is an async method, there will only be a Split.io API call if you have `serializeSegments` set to `true` and are passing in a unique `splits` parameter that this instance's method has not received before.
 
 ## Testing
 
