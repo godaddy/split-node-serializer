@@ -71,7 +71,7 @@ The poller emits an `error` event on errors from the Split.io API.
 
 #### generateSerializedDataScript
 
-`generateSerializedDataScript` will read the latest data from the cache and return a script
+`generateSerializedDataScript` is an async method that will read the latest data from the cache and return a script
 that adds serialized data to the `window.__splitCachePreload` object. The
 serialized data will be used to determine cohort allocations.
 
@@ -82,7 +82,7 @@ serialized data will be used to determine cohort allocations.
 | splits | Array of strings that, if included, filters the splitsData (Optional) |
 
 ```js
-const serializedDataScript = dataSerializer.generateSerializedDataScript()
+const serializedDataScript = await dataSerializer.generateSerializedDataScript()
 
 console.log(serializedDataScript)
 
@@ -95,6 +95,8 @@ console.log(serializedDataScript)
 //  };
 //</script>
 ```
+
+**Note:** Though this is an async method, there will only be a Split.io API call if you have `serializeSegments` set to `true` and are passing in a unique `splits` parameter that this instance's method has not received before.
 
 ## Testing
 
