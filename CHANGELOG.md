@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.1](https://github.com/godaddy/split-node-serializer/compare/2.0.0...2.0.1) (2020-05-07)
+
+
+### Bug Fixes
+
+* **poller:** properly handle the promises in updateSerializedDataSubsets ([#58](https://github.com/godaddy/split-node-serializer/issues/58)) ([50b9d03](https://github.com/godaddy/split-node-serializer/commit/50b9d03c1ba09d8f971118dbe105299221b738d7))
+* **poller:** unref the poller interval ([#59](https://github.com/godaddy/split-node-serializer/issues/59)) ([7e03d37](https://github.com/godaddy/split-node-serializer/commit/7e03d372e610324d62a6252c4d6cfefec4239791))
+
 ## [2.0.0](https://github.com/godaddy/split-node-serializer/compare/1.2.1...2.0.0) (2020-04-02)
 
 ### [1.2.1](https://github.com/godaddy/split-node-serializer/compare/1.2.0...1.2.1) (2020-04-02)
