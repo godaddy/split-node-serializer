@@ -4,10 +4,10 @@
   "description": "",
   "main": "lib/index.js",
   "scripts": {
-    "coverage": "nyc mocha --exit 'lib/*.test.js'",
+    "coverage": "nyc mocha 'lib/*.test.js'",
     "lint": "standard --fix --env mocha",
     "release": "standard-version --tag-prefix=''",
-    "test": "mocha --exit --recursive lib"
+    "test": "mocha --recursive lib"
   },
   "repository": {
     "type": "git",
