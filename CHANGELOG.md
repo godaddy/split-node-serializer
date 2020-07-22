@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.2](https://github.com/godaddy/split-node-serializer/compare/2.0.1...2.0.2) (2020-07-22)
+
 ### [2.0.1](https://github.com/godaddy/split-node-serializer/compare/2.0.0...2.0.1) (2020-05-07)
 
 
