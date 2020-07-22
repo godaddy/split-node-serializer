@@ -80,6 +80,7 @@ serialized data will be used to determine cohort allocations.
 | Property                      | Description |
 |-------------------------------|-------------|
 | splits | Array of strings that, if included, filters the splitsData (Optional) |
+| preloadLocation | The property on the `window` object where the data is stored. Defaults to `__splitCachePreload` (Optional) |
 
 ```js
 const serializedDataScript = await dataSerializer.generateSerializedDataScript()
