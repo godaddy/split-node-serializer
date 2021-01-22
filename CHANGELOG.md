@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.0.6](https://github.com/godaddy/split-node-serializer/compare/2.0.5...2.0.6) (2021-01-22)
+
+
+### Bug Fixes
+
+* **deps:** update dependency axios to v0.21.1 [security] ([#95](https://github.com/godaddy/split-node-serializer/issues/95)) ([041ebcd](https://github.com/godaddy/split-node-serializer/commit/041ebcd209afd1b96af621f48574c20fe475b9aa))
+
 ### [2.0.5](https://github.com/godaddy/split-node-serializer/compare/2.0.4...2.0.5) (2020-12-14)
 
 ### [2.0.4](https://github.com/godaddy/split-node-serializer/compare/2.0.3...2.0.4) (2020-10-30)
