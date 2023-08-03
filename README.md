@@ -1,5 +1,3 @@
-[![Join Slack](https://img.shields.io/badge/Join%20us%20on-Slack-e01563.svg)](https://godaddy-oss-slack.herokuapp.com/)
-
 # split-node-serializer
 
 Fetches split definitions and segments from Split.io and serializes them into a
